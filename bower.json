@@ -1,0 +1,23 @@
+{
+  "name": "showdown-highlight",
+  "homepage": "https://github.com/tivie/showdown-highlight",
+  "main": "src/showdown-highlight.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "showdown",
+    "ghost",
+    "highlight"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
