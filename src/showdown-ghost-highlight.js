@@ -24,30 +24,31 @@
 
 }(function() {
   return [
+    // Handle escaped =
     {
-      type: 'html',
-      extract: 'all',
-      filter: function (text) {
-        var highlightRegex = /\b(=){2}([\s\S]+?)(=){2}\b/g;
-
-        text = text.replace(highlightRegex, function (match, n, content) {
-          // Check the content isn't just an `=`
-          if (!/^ ?=+ ?$/.test(content)) {
-            return '<mark>' + content + '</mark>';
-          }
-
-          return match;
-        });
-
-        return text;
+      type: 'lang',
+      regex: /\\=/g,
+      replace: function (match) {
+        return '¨E' + match.charCodeAt(1) + 'E';
       }
     },
+    // Adds highlight syntax as per RedCarpet:
+    //
+    // https://github.com/vmg/redcarpet
+    //
+    // This is ==highlighted==. It looks like this: <mark>highlighted</mark>
+    //
+    // Is only called on span gamut, after italics and bold are parsed,
+    // so words can be highlighted and bolded
     {
-      // Escaped equals
-      type: 'html',
-      regex: '\\\\(=)',
-      replace: function (match, content) {
-        return content;
+      type: 'listener',
+      listeners: {
+        'italicsAndBold.after': function (evtName, text) {
+          text = text.replace(/\B={2}([^=]+?)={2}\B/g, function (match, content) {
+            return '<mark>' + content + '</mark>';
+          });
+          return text;
+        }
       }
     }
   ];

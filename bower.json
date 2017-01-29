@@ -1,7 +1,7 @@
 {
   "name": "showdown-highlight",
-  "homepage": "https://github.com/tivie/showdown-highlight",
-  "main": "src/showdown-highlight.js",
+  "homepage": "https://github.com/tivie/showdown-ghost-highlight",
+  "main": "src/showdown-ghost-highlight.js",
   "moduleType": [
     "amd",
     "globals",
