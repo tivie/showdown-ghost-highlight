@@ -90,6 +90,10 @@
       return x.trim();
     }).join('\n');
 
+    // Remove extra lines
+    testCase.expected = testCase.expected.trim();
+    testCase.actual = testCase.actual.trim();
+
     return testCase;
   }
 
