@@ -44,8 +44,8 @@
       type: 'listener',
       listeners: {
         'italicsAndBold.after': function (evtName, text) {
-          text = text.replace(/(^|\s|>|\b)==(?=\S)([\s\S]+?)==(?=\b|<|\s|$)/gm, function (match, p, content) {
-            return p + '<mark>' + content + '</mark>';
+          text = text.replace(/\B==([^=\s][\s\S]*?)==\B/gm, function (match, content) {
+            return '<mark>' + content + '</mark>';
           });
           return text;
         }
