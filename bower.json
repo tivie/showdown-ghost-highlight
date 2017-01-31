@@ -1,7 +1,7 @@
 {
-  "name": "showdown-highlight",
+  "name": "showdown-ghost-highlight",
   "homepage": "https://github.com/tivie/showdown-ghost-highlight",
-  "main": "src/showdown-ghost-highlight.js",
+  "main": "dist/showdown-ghost-highlight.js",
   "moduleType": [
     "amd",
     "globals",
@@ -19,5 +19,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "authors": [
+    "Estevao Soares dos Santos <estevao.santos@gmail.com>"
+  ],
+  "description": "Add highlight support to showdown"
 }
